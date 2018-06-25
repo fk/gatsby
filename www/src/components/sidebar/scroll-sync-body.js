@@ -73,7 +73,7 @@ const _getItemIds = sectionList => {
   let list = []
 
   sectionList.map(section => {
-    let foo = section.items
+    let sectionItems = section.items
       .map(item => {
         let subItemIds = []
         if (item.subitems) {
@@ -83,7 +83,7 @@ const _getItemIds = sectionList => {
       })
       .reduce((prev, current) => prev.concat(current))
 
-    list.push(foo)
+    list.push(sectionItems)
   })
 
   return [].concat(...list)
