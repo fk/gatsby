@@ -93,13 +93,7 @@ const _getElementTopOffsetsById = ids =>
   ids
     .map(hash => {
       const element = document.getElementById(hash)
-      if (!element) {
-        return null
-      }
-      return {
-        hash,
-        offsetTop: element.offsetTop - 63,
-      }
+      return element ? { hash, offsetTop: element.offsetTop - 63 } : null
     })
     .filter(item => item)
 
