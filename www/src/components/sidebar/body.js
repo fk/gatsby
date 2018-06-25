@@ -25,7 +25,7 @@ class SidebarBody extends React.Component {
   }
 
   _toggleSection(section) {
-    const openSectionHash = this.state.openSectionHash
+    const { openSectionHash } = this.state
     this.setState({
       openSectionHash: {
         ...openSectionHash,
