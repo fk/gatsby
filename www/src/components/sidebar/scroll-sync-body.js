@@ -45,13 +45,11 @@ class ScrollSyncSection extends Component {
     const { itemTopOffsets } = this.state
     const item = itemTopOffsets.find((itemTopOffset, i) => {
       const nextItemTopOffset = itemTopOffsets[i + 1]
-      if (nextItemTopOffset) {
-        return (
-          window.scrollY >= itemTopOffset.offsetTop &&
-          window.scrollY < nextItemTopOffset.offsetTop
-        )
-      }
-      return window.scrollY >= itemTopOffset.offsetTop
+
+      return nextItemTopOffset
+        ? window.scrollY >= itemTopOffset.offsetTop &&
+            window.scrollY < nextItemTopOffset.offsetTop
+        : window.scrollY >= itemTopOffset.offsetTop
     })
 
     this.setState({
