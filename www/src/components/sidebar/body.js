@@ -35,7 +35,7 @@ class SidebarBody extends React.Component {
   }
 
   _expandAll = () => {
-    const { openSectionHash } = this.state
+    let openSectionHash = { ...this.state.openSectionHash }
     Object.keys(openSectionHash).forEach(k => (openSectionHash[k] = true))
     this.setState({ openSectionHash })
   }
